@@ -6,7 +6,7 @@ from PIL import Image
 from pretrained_model.MNIST_model import Net
 
 def plot_ae_outputs(encoder, decoder, device, test_dataset, epoch, directory, n=5):
-    plt.figure(figsize=(10,7))
+    fig = plt.figure(figsize=(10,7))
 
     for i in range(n):
       ax = plt.subplot(4,n,i+1)
@@ -42,6 +42,8 @@ def plot_ae_outputs(encoder, decoder, device, test_dataset, epoch, directory, n=
       ax.get_yaxis().set_visible(False)  
       if i == n//2:
          ax.set_title('Second digit (n1 + n2)')
+    
+    fig.suptitle("SumAE - Epoch " + str(epoch))
     plt.savefig(directory + 'step_' + str(epoch) + '.png')
     plt.show()
 
