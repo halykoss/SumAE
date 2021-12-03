@@ -130,4 +130,5 @@ dmypy.json
 .idea/
 data/
 outputs/
-pretrained_model/
+pretrained_model/MNIST_coach.py
+pretrained_model/optimizer.pth
