@@ -1,4 +1,4 @@
-name: numberGAN
+name: sumAE
 channels:
   - pytorch
   - conda-forge

@@ -19,6 +19,7 @@ If you want run *SumAE* I suggest to use an Ubuntu 20.04 machine. All you have t
 
 ```
 conda env create --file environment.yml
+conda activate sumAE
 jupyter notebook
 ```
 
