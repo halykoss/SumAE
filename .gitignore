@@ -129,6 +129,6 @@ dmypy.json
 .pyre/
 .idea/
 data/
-outputs/
+outputs/step_*
 pretrained_model/MNIST_coach.py
 pretrained_model/optimizer.pth
