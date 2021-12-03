@@ -72,8 +72,13 @@ class TwoDigitSumDataset(Dataset):
         transform = transforms.Compose([
             transforms.ToTensor(),
         ])
-        # stacking input and output images
-        img_end = torch.cat((self.transform(data_x[0]), self.transform(data_x[1])), dim=0)
+        rand_val = np.random.normal(0,1,1)
+        # stacking input images
+        if rand_val <= 0.7:
+            img_end = torch.cat((self.transform(data_x[0]), self.transform(data_x[1])), dim=0)
+        else:
+            img_end = torch.cat((self.transform(data_x[1]), self.transform(data_x[0])), dim=0)
+        # stacking output images   
         img_dec = (self.y_data[idx], torch.cat((transform(data_y[0]), transform(data_y[1])), dim=0))
 
         return img_end, img_dec

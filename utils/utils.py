@@ -44,7 +44,10 @@ def plot_ae_outputs(encoder, decoder, device, test_dataset, epoch, directory, n=
          ax.set_title('Second digit (n1 + n2)')
     
     fig.suptitle("SumAE - Epoch " + str(epoch))
-    plt.savefig(directory + 'step_' + str(epoch) + '.png')
+    if epoch < 10:
+        plt.savefig(directory + 'step_0' + str(epoch) + '.png')
+    else:
+        plt.savefig(directory + 'step_' + str(epoch) + '.png')
     plt.show()
 
 def generate_gif():
